@@ -1,0 +1,105 @@
+ALGORITHM sumNonRepNumber
+VAR
+    sum=0,m,n :INTEGER
+    tab1=[m]
+    tab2=[n]
+    result=[m+n]
+    pos=0 : INTEGER
+BEGIN
+  FOR (int element : tab1) {
+            result[pos] = element;
+            pos++;
+        }
+
+    FOR (int element : tab2) {
+            result[pos] = element;
+            pos++;
+        }
+read (result)
+
+FOR (i = 0 ; i < result.length ; i++){
+    FOR j=0 ; j <=i ; j++{
+IF (j==i) THEN
+    sum+=result[i]
+    IF (result[i]==result[j]) THEN
+     break;
+    END_IF
+END_IF
+    }
+        
+    END_FOR
+}
+END
+
+//********************************************
+
+
+ALGORITHM Solution2
+VAR
+    tab1,tab2 : ARRAY_OF INTEGER[20];
+    arrKey : ARRAY_OF INTEGER[40];
+    dict := HASH_TABLE<INTEGER,INTEGER>;
+    i, count : INTEGER;
+    sum : INTEGER := 0;
+BEGIN
+
+
+    FOR i FROM 0 TO set1.length -1 STEP 1  DO
+        IF (dict.lookup(tab1[i]) = TRUE) THEN
+            count := dict.get(tab1[i]);
+            dict.insert(tab1[i],count+1);
+        ELSE
+            dict.insert(tab1[i],1);
+        END_IF
+    END_FOR
+
+    FOR i FROM 0 TO tab2.length -1 STEP 1  DO
+        IF (dict.lookup(tab2[i]) = TRUE) THEN
+            count := dict.get(tab2[i]);
+            dict.insert(tab2[i],count+1);
+        ELSE
+            dict.insert(tab2[i],1);
+        END_IF
+    END_FOR
+
+    //get sum of distinct elements
+    arrKey := dict.getKeys();
+    FOR i FROM 0 TO arrKey.length -1 STEP 1  DO
+        IF (dict.get(arrKey[i]) = 1) THEN
+            sum := sum +arrKey[i];
+        END_IF
+    END_FOR
+
+END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
