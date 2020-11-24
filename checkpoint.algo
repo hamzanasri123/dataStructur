@@ -1,0 +1,86 @@
+PROCEDURE dotVector(arr1,arr2 : ARRAY_OF INTEGER, VAR dot : INTEGER )
+VAR
+    i:INTEGER
+BEGIN
+    dot :=0;
+    i:=0;
+    IF (arr1.length <> arr2.length) THEN
+        Write("les deux vecteur sont differents")
+         dot := NaN;
+    END_IF
+        WHILE (i < arr1.length) DO
+            dot:=dot + arr1[i] * arr2[i]
+        END_WHILE
+
+END
+
+
+ALGORITHM arrOrthogonal
+VAR
+    arr1 ,arr2 : ARRAY_OF INTEGER [50];
+    dot : INTEGER;
+BEGIN
+    n1:=read_size();
+    read_array(n1,arr2)
+    n2:=read_size()
+    read_array(n2,arr2)
+    dotVector(arr1,arr2,dot)
+    IF (dot=0) THEN
+        Write("les deux vecteurs sont Orthogonal ")
+  
+    ELSE
+        Write("les deux vecteurs ne sont pas orthogonals")
+    END_IF
+    END_IF
+END
+
+
+FUNCTION dotVector(arr1,arr2 : ARRAY_OF INTEGER ) : INTEGER 
+VAR
+    dot,i:INTEGER
+BEGIN
+    dot :=0;
+    i:=0;
+    IF (arr1.length <> arr2.length) THEN
+        Write("les deux vecteur sont differents")
+        RETURN dot := NaN;
+    END_IF
+        WHILE (i < arr1.length) DO
+            dot:=dot + arr1[i] * arr2[i]
+        END_WHILE
+RETURN dot
+END
+
+
+ALGORITHM arrOrthogonal
+VAR
+    arr1 ,arr2 : ARRAY_OF INTEGER [50];
+    dot : INTEGER;
+BEGIN
+    n1:=read_size();
+    read_array(n1,arr2)
+    n2:=read_size()
+    read_array(n2,arr2)
+    dotVector(arr1,arr2)
+    IF (dot=0) THEN
+        Write("les deux vecteurs sont Orthogonal ")
+  
+    ELSE
+        Write("les deux vecteurs ne sont pas orthogonals")
+    END_IF
+    END_IF
+END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
