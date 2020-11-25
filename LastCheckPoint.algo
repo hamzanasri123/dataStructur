@@ -1,0 +1,34 @@
+PROCEDURE triSelect(arr: ARRAY_OF INTEGER;  taille:INTEGER)
+VAR
+    elem,i,j:INTEGER
+BEGIN
+    FOR i FROM 1 TO arr.length STEP 1  DO
+        elem=arr[i];
+        FOR j FROM i TO j > 0 && arr[j-1] > elem   DO
+                 arr[j] = arr[j-1];
+       arr[j] = elem;
+        END_FOR
+    END_FOR
+END
+
+ALGORITHM main
+VAR
+    i:INTEGER
+    array : ARRAY_OF INTEGER[40];
+BEGIN
+    write("avant le tri : ")
+    FOR i FROM 0 ;i <arr.length step  1  DO
+        write(arr[i])
+        triSelect(array,40)
+        write("apres le trie")
+        FOR i FROM 0 i < array.length STEP 1  DO
+            write(array[i])
+        END_FOR
+    END_FOR
+END
+
+
+
+
+
+    
